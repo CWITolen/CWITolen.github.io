@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Ferrari F2004</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background-color: white;
+      color: black;
+      font-size: 20px;
+      line-height: 1.6;
+      padding-top: 60px; /* so content isn't hidden behind fixed nav */
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+    }
+
+    .nav-links a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+      color: #ff2800;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;          
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+
+    /* --- Dark overlay for contrast --- */
+    .dark-layer {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4); /* 40% darkness */
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 1; /* text above dark overlay */
+    }
+
+    .overlay h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      color: white;
+      text-shadow: 0 0 15px black;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .content p {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .content a {
+      display: inline-block;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .content a:hover {
+      text-decoration: underline;
+      color: #005fa3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="nav-links">
+    <a href="racewins.html">Race Wins</a>
+    <a href="results.html">Results</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="f2004.jpg" alt="Red Ferrari F2004 Formula 1 car on track" class="hero-image">
+    <div class="dark-layer"></div>
+    <div class="overlay">
+      <h1>The Ferrari F2004</h1>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <p>
+      The Ferrari F2004 cemented Michael Schumacher’s legacy and closed out a golden era for Ferrari, marking the end of Ferrari’s 5-year dominance from 2000–2004.
+      Sporting a 3.0L V10 engine, it won 15 out of 18 Grand Prix, 12 pole positions, and 14 fastest laps.
+      Helping Michael Schumacher win his record 7th World Driver's Championship.
+      Still revered today by fans and engineers alike — and often considered one of the greatest F1 cars of all time.
+    </p>
+    
+    <p>
+      <a href="https://www.formula1.com/" target="_blank" rel="noopener noreferrer">
+        Watch cars like this race here on Formula 1!
+      </a>
+    </p>
+  </section>
+
+</body>
+</html>
