@@ -119,6 +119,45 @@
       text-decoration: underline;
       color: #005fa3;
     }
+form {
+max-width: 500px;
+margin: auto;
+padding: 20px;
+background-color: #f9f9f9;
+border-radius: 10px;
+white-space: nowrap;
+}
+
+input, textarea {
+width: 80%;
+margin-bottom: 10px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+button {
+background-color: #FF2800;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+}
+button:hover {
+background-color: #007bce;
+}
+.content {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center; /* centers text and inline elements like links */
+}
+.newsletter-logo {
+  display: block;         /* makes margin auto work */
+  margin: 0 auto 15px;    /* centers horizontally, adds space below */
+  width: 60px;            /* adjust to desired size */
+  height: auto;           /* maintain aspect ratio */
+}
 
   </style>
 </head>
@@ -146,21 +185,50 @@
       Sporting a 3.0L V10 engine, it won 15 out of 18 Grand Prix, 12 pole positions, and 14 fastest laps.
       Helping Michael Schumacher win his record 7th World Driver's Championship.
       Still revered today by fans and engineers alike — and often considered one of the greatest F1 cars of all time.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3__4XNcGIbg?si=myLEEqqbtJJbCLzd" title="YouTube video player Michael Schumacher pole position lap in Gernamny 2004" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EjZY_2t2UWU?si=I8FiYO46ZguykxF2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p>
 Video Credit: MassaManUtdChannel
 </p>
-
     <p>
       <a href="https://www.formula1.com/" target="_blank" rel="noopener noreferrer">
         Watch cars like this race here on Formula 1!
       </a>
     </p>
   </section>
+ <form class="Ferrari Newsletter" action="#" method="post">
+<img src="logo.png" alt="Ferrari emblem" class="newsletter-logo">
+<p>
+<strong>Sign up for the Scuderia Ferrari Newsletter</strong>
+</p>
+  <div class="ferrari field">
+  <div class="ferrari field">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email"required>
+  </div>
+
+  <div class="ferrai field">
+    <label for="interest">What would you like updates on?</label>
+    <select id="interest" name="interest" required>
+      <option value="">Choose</option>
+      <option value="driver">Driver Updates</option>
+      <option value="race">Race Highlight Archive</option>
+      <option value="2026">2026 Rumors</option>
+      <option value="technical">Technical Updates</option>
+    </select>
+  </div>
+<div class="ferrai field">
+    <label for="updates">How often would you like updates?</label>
+    <select id="updates" name="interest" required>
+      <option value="">Choose</option>
+      <option value="">Weekly</option>
+      <option value="">Daily</option>
+      <option value="">Monthly</option>
+    </select>
+  </div>
+
+  <button type="submit" class="ferrari newsletter">Subscribe</button>
+</form>
 
 </body>
 </html>
-
-
-
-
