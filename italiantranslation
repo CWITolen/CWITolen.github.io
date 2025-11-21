@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>La Ferrari F2004</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Marcellus', serif;
+    background-color: #fdf6f0;
+    color: #222;
+    line-height: 1.8;
+    padding-top: 70px;
+    position: relative;
+  }
+
+  /* Navbar */
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .nav-items { display: flex; gap:20px; }
+
+  .nav-links a {
+    color:#222; text-decoration:none; font-weight:bold; font-size:18px;
+    transition:0.2s;
+  }
+
+  .nav-links a:hover { color:#CD212A; text-decoration:underline; }
+
+  .lang-flags { display:flex; gap:10px; cursor:pointer; }
+  .lang-flags img { width:32px; height:20px; border:2px solid transparent; transition:0.2s; }
+  .lang-flags img:hover { transform:scale(1.2); border-color:#CD212A; }
+
+  /* Hero */
+  .hero { position:relative; height:100vh; width:100%; overflow:hidden; }
+  .hero-image { width:100%; height:100%; object-fit:cover; filter:brightness(65%); }
+  .dark-layer { position:absolute; inset:0; background:rgba(0,0,0,0.4); }
+  .overlay { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:white; text-align:center; }
+  .overlay h1 {
+    font-family: 'Cinzel', serif;
+    font-size:4rem;
+    text-shadow: 0 0 15px black;
+    margin-bottom:10px;
+  }
+  .overlay p { font-size:1.5rem; font-style:italic; }
+
+  /* Tricolor bar */
+  .italy-bar { width:100%; height:6px; background: linear-gradient(to right, #008C45, white, #CD212A); }
+
+  /* Content */
+  .content { max-width:800px; margin:50px auto; padding:20px; text-align:center; }
+  .content p { font-size:22px; margin-bottom:20px; }
+  iframe { margin:20px 0; max-width:100%; }
+
+  /* Highlight box */
+  .highlight-box {
+    border-left:6px solid #CD212A;
+    border-bottom:6px solid #008C45;
+    background:#fff4f2;
+    padding:20px;
+    margin:20px 0;
+    font-style:italic;
+    font-size:20px;
+  }
+
+  /* Newsletter */
+  form {
+    max-width:500px; margin:40px auto; padding:20px; background:#fff4f2; border-radius:10px; text-align:center;
+    border-top:4px solid #008C45; border-bottom:4px solid #CD212A;
+  }
+  input, select { width:80%; padding:10px; margin-bottom:15px; border-radius:5px; border:1px solid #ccc; }
+  button { background-color:#CD212A; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer; transition:0.2s; }
+  button:hover { background-color:#007bce; }
+  .newsletter-logo { display:block; margin:0 auto 15px; width:60px; }
+
+  /* Footer watermark */
+  body::after {
+    content: '';
+    background: url('ferrari_watermark.png') no-repeat bottom right;
+    background-size:300px;
+    opacity:0.05;
+    position:fixed;
+    bottom:0; right:0; width:300px; height:300px; pointer-events:none;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="nav-links">
+  <div class="nav-items">
+    <a href="racewins_it.html">Vittorie in Gara</a>
+    <a href="results_it.html">Risultati</a>
+  </div>
+  <div class="lang-flags">
+    <img src="https://flagcdn.com/us.svg" alt="English" onclick="window.location='index.html'">
+    <img src="https://flagcdn.com/it.svg" alt="Italiano">
+  </div>
+</div>
+
+<div class="italy-bar"></div>
+
+<!-- Hero -->
+<section class="hero">
+  <img src="f2004.jpg" class="hero-image" alt="Ferrari F2004 in pista">
+  <div class="dark-layer"></div>
+  <div class="overlay">
+    <h1>La Ferrari F2004</h1>
+    <p>“La vittoria è l’unica opzione.” — Enzo Ferrari</p>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="content">
+  <p>
+    La Ferrari F2004 non è soltanto un’auto: è un’icona.  
+    Ha scolpito nella storia il nome di Michael Schumacher e ha illuminato un’epoca irripetibile.
+  </p>
+
+  <div class="highlight-box">
+    15 vittorie su 18 Gran Premi — un record leggendario!
+  </div>
+
+  <p>
+    Dotata di un motore V10 3.0L, ha ottenuto 12 pole position e 14 giri più veloci, contribuendo al 7° titolo mondiale di Schumacher.
+  </p>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/EjZY_2t2UWU?si=I8FiYO46ZguykxF2" allowfullscreen></iframe>
+  <p>Crediti Video: MassaManUtdChannel</p>
+
+  <p>
+    <a href="https://www.formula1.com/" target="_blank">Guarda queste auto sfrecciare su Formula 1!</a>
+  </p>
+</section>
+
+<!-- Newsletter -->
+<form action="#" method="post">
+  <img src="logo.png" class="newsletter-logo">
+  <p><strong>Iscriviti alla Newsletter Ferrari</strong></p>
+
+  <label>Email</label><br>
+  <input type="email" required><br>
+
+  <label>Su cosa vuoi aggiornamenti?</label><br>
+  <select required>
+    <option value="">Scegli</option>
+    <option>Aggiornamenti Piloti</option>
+    <option>Highlights Gare</option>
+    <option>Rumors 2026</option>
+    <option>Aggiornamenti Tecnici</option>
+  </select><br>
+
+  <label>Quanto spesso?</label><br>
+  <select required>
+    <option value="">Scegli</option>
+    <option>Settimanale</option>
+    <option>Giornaliero</option>
+    <option>Mensile</option>
+  </select><br>
+
+  <button type="submit">Iscriviti</button>
+</form>
+
+</body>
+</html>
