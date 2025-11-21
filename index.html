@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <title>The Ferrari F2004</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-  
+
     * {
       margin: 0;
       padding: 0;
@@ -26,21 +26,26 @@
       color: black;
       font-size: 20px;
       line-height: 1.6;
-      padding-top: 60px; /* so content isn't hidden behind fixed nav */
+      padding-top: 60px;
     }
 
+    /* Navigation */
     .nav-links {
       display: flex;
-      justify-content: center;
-      gap: 30px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
       background: rgba(255, 255, 255, 0.9);
-      padding: 15px 0;
+      backdrop-filter: blur(5px);
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
       z-index: 10;
-      backdrop-filter: blur(5px);
+    }
+
+    .nav-items {
+      display: flex;
+      gap: 20px;
     }
 
     .nav-links a {
@@ -48,17 +53,37 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 18px;
-      transition: color 0.2s ease;
+      transition: 0.2s;
     }
 
     .nav-links a:hover {
-      text-decoration: underline;
       color: #ff2800;
+      text-decoration: underline;
     }
 
+    /* Flags */
+    .lang-flags {
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .lang-flags img {
+      width: 32px;
+      height: 20px;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .lang-flags img:hover {
+      transform: scale(1.2);
+      border-color: #ff2800;
+    }
+
+    /* Hero */
     .hero {
       position: relative;
-      height: 100vh;          
+      height: 100vh;
       width: 100%;
       overflow: hidden;
     }
@@ -70,12 +95,10 @@
       filter: brightness(70%);
     }
 
-    /* --- Dark overlay for contrast --- */
     .dark-layer {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4); /* 40% darkness */
-      z-index: 0;
+      background: rgba(0,0,0,0.4);
     }
 
     .overlay {
@@ -85,93 +108,83 @@
       transform: translate(-50%, -50%);
       text-align: center;
       color: white;
-      z-index: 1; /* text above dark overlay */
     }
 
     .overlay h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 4rem;
-      color: white;
       text-shadow: 0 0 15px black;
     }
 
+    /* Content */
     .content {
       max-width: 800px;
       margin: 50px auto;
       padding: 20px;
+      text-align: center;
     }
 
-    .content p {
-      font-size: 22px;
-      margin-bottom: 20px;
+    iframe { margin: 20px 0; }
+
+    /* Newsletter */
+    form {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
     }
 
-    .content a {
-      display: inline-block;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-      font-size: 18px;
+    input, select {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
-    .content a:hover {
-      text-decoration: underline;
-      color: #005fa3;
+    button {
+      background-color: #ff2800;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
     }
-form {
-max-width: 500px;
-margin: auto;
-padding: 20px;
-background-color: #f9f9f9;
-border-radius: 10px;
-white-space: nowrap;
-}
 
-input, textarea {
-width: 80%;
-margin-bottom: 10px;
-padding: 10px;
-border: 1px solid #ccc;
-border-radius: 5px;
-}
+    button:hover {
+      background-color: #007bce;
+    }
 
-button {
-background-color: #FF2800;
-color: white;
-padding: 10px 15px;
-border: none;
-border-radius: 5px;
-}
-button:hover {
-background-color: #007bce;
-}
-.content {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  text-align: center; /* centers text and inline elements like links */
-}
-.newsletter-logo {
-  display: block;         /* makes margin auto work */
-  margin: 0 auto 15px;    /* centers horizontally, adds space below */
-  width: 60px;            /* adjust to desired size */
-  height: auto;           /* maintain aspect ratio */
-}
+    .newsletter-logo {
+      display: block;
+      margin: 0 auto 15px;
+      width: 60px;
+    }
 
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navbar -->
   <div class="nav-links">
-    <a href="racewins.html">Race Wins</a>
-    <a href="results.html">Results</a>
+
+    <div class="nav-items">
+      <a href="racewins.html">Race Wins</a>
+      <a href="results.html">Results</a>
+    </div>
+
+    <div class="lang-flags">
+      <img src="https://flagcdn.com/us.svg" alt="English">
+      <img src="https://flagcdn.com/it.svg" alt="Italiano" onclick="window.location='indexv2.html'">
+    </div>
+
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <img src="f2004.jpg" alt="Red Ferrari F2004 Formula 1 car on track" class="hero-image">
+    <img src="f2004.jpg" class="hero-image">
     <div class="dark-layer"></div>
     <div class="overlay">
       <h1>The Ferrari F2004</h1>
@@ -180,55 +193,52 @@ background-color: #007bce;
 
   <!-- Content -->
   <section class="content">
+
     <p>
-      The Ferrari F2004 cemented Michael Schumacher’s legacy and closed out a golden era for Ferrari, marking the end of Ferrari’s 5-year dominance from 2000–2004.
+     The Ferrari F2004 cemented Michael Schumacher’s legacy and closed out a golden era for Ferrari, marking the end of Ferrari’s 5-year dominance from 2000–2004.
       Sporting a 3.0L V10 engine, it won 15 out of 18 Grand Prix, 12 pole positions, and 14 fastest laps.
       Helping Michael Schumacher win his record 7th World Driver's Championship.
       Still revered today by fans and engineers alike — and often considered one of the greatest F1 cars of all time.
     </p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EjZY_2t2UWU?si=I8FiYO46ZguykxF2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p>
-Video Credit: MassaManUtdChannel
-</p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/EjZY_2t2UWU?si=I8FiYO46ZguykxF2" allowfullscreen></iframe>
+
+    <p>Video Credit: MassaManUtdChannel</p>
+
     <p>
-      <a href="https://www.formula1.com/" target="_blank" rel="noopener noreferrer">
-        Watch cars like this race here on Formula 1!
-      </a>
+      <a href="https://www.formula1.com/" target="_blank">Watch cars like this race here on Formula 1!</a>
     </p>
+
   </section>
- <form class="Ferrari Newsletter" action="#" method="post">
-<img src="logo.png" alt="Ferrari emblem" class="newsletter-logo">
-<p>
-<strong>Sign up for the Scuderia Ferrari Newsletter</strong>
-</p>
-  <div class="ferrari field">
-  <div class="ferrari field">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email"required>
-  </div>
 
-  <div class="ferrai field">
-    <label for="interest">What would you like updates on?</label>
-    <select id="interest" name="interest" required>
-      <option value="">Choose</option>
-      <option value="driver">Driver Updates</option>
-      <option value="race">Race Highlight Archive</option>
-      <option value="2026">2026 Rumors</option>
-      <option value="technical">Technical Updates</option>
-    </select>
-  </div>
-<div class="ferrai field">
-    <label for="updates">How often would you like updates?</label>
-    <select id="updates" name="interest" required>
-      <option value="">Choose</option>
-      <option value="">Weekly</option>
-      <option value="">Daily</option>
-      <option value="">Monthly</option>
-    </select>
-  </div>
+  <!-- Newsletter -->
+  <form action="#" method="post">
+    <img src="logo.png" class="newsletter-logo">
 
-  <button type="submit" class="ferrari newsletter">Subscribe</button>
-</form>
+    <p><strong>Sign up for the Scuderia Ferrari Newsletter</strong></p>
+
+    <label>Email</label><br>
+    <input type="email" required><br>
+
+    <label>What would you like updates on?</label><br>
+    <select required>
+      <option value="">Choose</option>
+      <option>Driver Updates</option>
+      <option>Race Highlights</option>
+      <option>2026 Rumors</option>
+      <option>Technical Updates</option>
+    </select><br>
+
+    <label>How often?</label><br>
+    <select required>
+      <option value="">Choose</option>
+      <option>Weekly</option>
+      <option>Daily</option>
+      <option>Monthly</option>
+    </select><br>
+
+    <button type="submit">Subscribe</button>
+  </form>
 
 </body>
 </html>
